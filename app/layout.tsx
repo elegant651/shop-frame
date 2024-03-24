@@ -9,12 +9,11 @@ export const viewport = {
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
-  console.log('d', process.env.NEXT_PUBLIC_DYNAMIC_ENV_ID)
   return (
     <html lang="en">
       <DynamicContextProvider
         settings={{
-          environmentId: process.env.NEXT_PUBLIC_DYNAMIC_ENV_ID,
+          environmentId: process.env.NEXT_PUBLIC_DYNAMIC_ENV_ID!,
           walletConnectors: [EthereumWalletConnectors],
           walletConnectorExtensions: [EthersExtension],
         }}>
